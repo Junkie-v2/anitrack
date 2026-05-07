@@ -54,7 +54,7 @@ All of this runs silently in the background. The only thing you will ever see is
 
 **Required for `godownload.fish` (GoAnime):**
 
-- [goanime](https://github.com/alex2006hw/goanime) CLI installed and accessible in your PATH
+- [goanime](https://github.com/alvarorichard/GoAnime) CLI installed and accessible in your PATH
 
 ---
 
