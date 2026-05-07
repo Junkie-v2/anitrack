@@ -15,7 +15,7 @@ When you finish an episode in mpv, AniTrack detects it, identifies the show and 
 The `download` function queries [SeaDex](https://releases.moe) to find the best quality release for any anime title, pulls the magnet link from Nyaa, and opens it directly in qBittorrent. SeaDex is a community-maintained index that identifies the definitive best release for each show, so you always get the right encode without having to research it yourself.
 
 **GoAnime Downloading**
-The `godownload` function wraps the [goanime]([https://github.com/alex2006hw/goanime](https://github.com/alvarorichard/GoAnime)) CLI for fast batch episode downloads. It trades some of the quality you would get from a curated Nyaa torrent for speed and convenience, which makes it a good option when you want a full season quickly without waiting on a torrent to seed.
+The `godownload` function wraps the [goanime]([https://github.com/alex2006hw/goanime](https://github.com/alvarorichard/GoAnime) CLI for fast batch episode downloads. It trades some of the quality you would get from a curated Nyaa torrent for speed and convenience, which makes it a good option when you want a full season quickly without waiting on a torrent to seed.
 
 **Episode Renaming**
 A Python utility to batch rename downloaded episodes into a consistent format. This matters because the AniList tracker depends on being able to parse the show title and episode number from the filename, and raw downloads often come with inconsistent or messy naming.
