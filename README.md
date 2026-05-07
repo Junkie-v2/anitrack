@@ -28,7 +28,7 @@ All of this happens without any manual input.
 For the optional download features:
 
 - `download.fish` requires **jq**, **fzf**, and **qbittorrent** (or another magnet handler)
-- `godownload.fish` requires the [goanime](https://github.com/alex2006hw/goanime) CLI
+- `godownload.fish` requires [goanime](https://github.com/alvarorichard/GoAnime)
 
 ---
 
