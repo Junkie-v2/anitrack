@@ -1,0 +1,15 @@
+# AniTrack configuration
+# Copy to ~/.config/anitrack/config.fish and fill in your values.
+#
+# Token guide: https://docs.anilist.co/guide/auth/authorization-code
+
+# === REQUIRED ===
+# JWT access token (NOT the client secret)
+# set -gx ANITRACK_TOKEN "your_long_token_here"
+
+# Client ID (default: 40738 for the AniTrack app)
+set -gx ANITRACK_CLIENT_ID 40738
+
+# === OPTIONAL ===
+# Used only for display/logging; safe to leave as is.
+set -gx ANITRACK_USER "your_username"
