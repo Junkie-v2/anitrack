@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -euo pipefail
-
 echo "=== AniTrack Installer ==="
 
 # Directories
@@ -41,11 +40,12 @@ if command -v whiptail &>/dev/null; then
     "download" "SeaDex/nyaa downloader (download.fish)" OFF \
     "godownload" "GoAnime downloader (godownload.fish)" OFF \
     3>&1 1>&2 2>&3)
-
-  if [[ "$choices" == *"download"* ]]; then
+  # Match quoted tokens exactly as whiptail returns them to avoid
+  # "godownload" triggering the "download" check
+  if [[ "$choices" == *'"download"'* ]]; then
     install_download=true
   fi
-  if [[ "$choices" == *"godownload"* ]]; then
+  if [[ "$choices" == *'"godownload"'* ]]; then
     install_godownload=true
   fi
 else
@@ -67,6 +67,7 @@ if $install_download; then
   chmod +x "${FISH_FUNCTIONS_DIR}/download.fish"
   echo "Installed download.fish"
 fi
+
 if $install_godownload; then
   cp fish/functions/godownload.fish "${FISH_FUNCTIONS_DIR}/"
   chmod +x "${FISH_FUNCTIONS_DIR}/godownload.fish"
@@ -85,13 +86,13 @@ fi
 FISH_CONFIG="${FISH_CONFIG_DIR}/config.fish"
 if [ -f "${FISH_CONFIG}" ]; then
   if ! grep -q "ANITRACK_TOKEN" "${FISH_CONFIG}"; then
-    cat >>"${FISH_CONFIG}" <<'EOF'
+    cat >>"${FISH_CONFIG}" <<'FISHEOF'
 
 # AniTrack auto-load (set your token in ~/.config/anitrack/config.fish)
 if test -f ~/.config/anitrack/config.fish
     source ~/.config/anitrack/config.fish
 end
-EOF
+FISHEOF
     echo "Added AniTrack source snippet to ${FISH_CONFIG}"
   else
     echo "AniTrack snippet already present in fish config."
