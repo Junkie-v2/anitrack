@@ -2,10 +2,6 @@
 
 An all-in-one anime tool for Linux users running the Fish shell. AniTrack combines automatic AniList progress tracking with flexible anime downloading, episode renaming, and seamless mpv integration.
 
-Built around three core ideas: watch your anime, let the tool handle the rest.
-
----
-
 ## What It Does
 
 **Automatic AniList Tracking**
